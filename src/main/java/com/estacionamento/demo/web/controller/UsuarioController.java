@@ -1,4 +1,4 @@
-package com.estacionamento.demo.web;
+package com.estacionamento.demo.web.controller;
 
 import com.estacionamento.demo.entity.Usuario;
 import com.estacionamento.demo.service.UsuarioService;
