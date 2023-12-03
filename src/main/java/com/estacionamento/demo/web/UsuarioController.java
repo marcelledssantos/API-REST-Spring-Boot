@@ -1,11 +1,11 @@
-package com.estacionamento.demo.web.controller;
+package com.estacionamento.demo.web;
 
 import com.estacionamento.demo.entity.Usuario;
 import com.estacionamento.demo.service.UsuarioService;
-import com.estacionamento.demo.web.controller.dto.UsuarioCreateDto;
-import com.estacionamento.demo.web.controller.dto.UsuarioResponseDto;
-import com.estacionamento.demo.web.controller.dto.UsuarioSenhaDto;
-import com.estacionamento.demo.web.controller.mapper.UsuarioMapper;
+import com.estacionamento.demo.web.dto.UsuarioCreateDto;
+import com.estacionamento.demo.web.dto.UsuarioResponseDto;
+import com.estacionamento.demo.web.dto.UsuarioSenhaDto;
+import com.estacionamento.demo.web.mapper.UsuarioMapper;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

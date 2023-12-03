@@ -1,4 +1,4 @@
-package com.estacionamento.demo.web.controller.dto;
+package com.estacionamento.demo.web.dto;
 
 import lombok.*;
 

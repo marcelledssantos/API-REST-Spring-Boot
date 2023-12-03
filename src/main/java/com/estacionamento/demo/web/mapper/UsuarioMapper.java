@@ -1,11 +1,10 @@
-package com.estacionamento.demo.web.controller.mapper;
+package com.estacionamento.demo.web.mapper;
 
 import com.estacionamento.demo.entity.Usuario;
-import com.estacionamento.demo.web.controller.dto.UsuarioCreateDto;
-import com.estacionamento.demo.web.controller.dto.UsuarioResponseDto;
+import com.estacionamento.demo.web.dto.UsuarioCreateDto;
+import com.estacionamento.demo.web.dto.UsuarioResponseDto;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
-import org.springframework.ui.ModelMap;
 
 import java.util.List;
 import java.util.stream.Collectors;
