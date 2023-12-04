@@ -70,6 +70,8 @@ public class UsuarioController {
                             content =@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
                     @ApiResponse(responseCode = "400", description = "Senha não confere",
                             content =@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "422", description = "Senha não confere",
+                            content =@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
             })
     @PatchMapping("/{id}")
     public ResponseEntity<Void> updatePassword(@PathVariable Long id, @Valid @RequestBody UsuarioSenhaDto dto) {
@@ -86,7 +88,7 @@ public class UsuarioController {
             })
     @GetMapping
     public ResponseEntity<List<UsuarioResponseDto>> getAll() {
-        List<Usuario> users = usuarioService.buscarPorTodos();
+        List<Usuario> users = usuarioService.buscarTodos();
         return ResponseEntity.ok(UsuarioMapper.toListDto(users));
     }
 }
