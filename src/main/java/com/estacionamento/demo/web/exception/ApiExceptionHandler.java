@@ -1,5 +1,7 @@
 package com.estacionamento.demo.web.exception;
 
+import com.estacionamento.demo.exception.EntityNotFoundException;
+import com.estacionamento.demo.exception.PasswordInvalidException;
 import com.estacionamento.demo.exception.UsernameUniqueViolationException;
 
 import jakarta.servlet.http.HttpServletRequest;

@@ -18,17 +18,14 @@ import java.util.Objects;
 @Entity
 @Table(name = "usuarios")
 @EntityListeners(AuditingEntityListener.class)
-public class Usuario  implements Serializable {
-
+public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
     @Column(name = "username", nullable = false, unique = true, length = 100)
     private String username;
-
-    @Column(name = "password",nullable = false, length = 200)
+    @Column(name = "password", nullable = false, length = 200)
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -38,24 +35,19 @@ public class Usuario  implements Serializable {
     @CreatedDate
     @Column(name = "data_criacao")
     private LocalDateTime dataCriacao;
-
     @LastModifiedDate
     @Column(name = "data_modificacao")
     private LocalDateTime dataModificacao;
-
     @CreatedBy
     @Column(name = "criado_por")
     private String criadoPor;
-
     @LastModifiedBy
     @Column(name = "modificado_por")
     private String modificadoPor;
 
-
     public enum Role {
         ROLE_ADMIN, ROLE_CLIENTE
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
