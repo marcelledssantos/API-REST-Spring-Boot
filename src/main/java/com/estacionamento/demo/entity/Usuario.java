@@ -1,5 +1,6 @@
 package com.estacionamento.demo.entity;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,10 +15,13 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import static com.estacionamento.demo.entity.Usuario.Role.ROLE_CLIENTE;
+
 @Getter @Setter @NoArgsConstructor
 @Entity
 @Table(name = "usuarios")
 @EntityListeners(AuditingEntityListener.class)
+
 public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
