@@ -1,5 +1,6 @@
 package com.estacionamento.demo.web.exception;
 
+import com.estacionamento.demo.exception.CpfUniqueViolationException;
 import com.estacionamento.demo.exception.EntityNotFoundException;
 import com.estacionamento.demo.exception.PasswordInvalidException;
 import com.estacionamento.demo.exception.UsernameUniqueViolationException;
@@ -63,15 +64,14 @@ public class ApiExceptionHandler {
 
     }
 
-    @ExceptionHandler(UsernameUniqueViolationException.class)
-    public ResponseEntity<ErrorMessage> uniqueViolationException(RuntimeException ex,
-                                                                 HttpServletRequest request) {
-        log.error("Api error - ", ex );
+    @ExceptionHandler({UsernameUniqueViolationException.class, CpfUniqueViolationException.class})
+    public ResponseEntity<ErrorMessage> uniqueViolationException(RuntimeException ex, HttpServletRequest request) {
+        log.error("Api Error - ", ex);
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(new ErrorMessage(request,HttpStatus.CONFLICT, ex.getMessage()));
-
+                .body(new ErrorMessage(request, HttpStatus.CONFLICT, ex.getMessage()));
     }
+
 }
 
