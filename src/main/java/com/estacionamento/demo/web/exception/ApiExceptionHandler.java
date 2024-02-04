@@ -1,9 +1,6 @@
 package com.estacionamento.demo.web.exception;
 
-import com.estacionamento.demo.exception.CpfUniqueViolationException;
-import com.estacionamento.demo.exception.EntityNotFoundException;
-import com.estacionamento.demo.exception.PasswordInvalidException;
-import com.estacionamento.demo.exception.UsernameUniqueViolationException;
+import com.estacionamento.demo.exception.*;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -64,7 +61,7 @@ public class ApiExceptionHandler {
 
     }
 
-    @ExceptionHandler({UsernameUniqueViolationException.class, CpfUniqueViolationException.class})
+    @ExceptionHandler({UsernameUniqueViolationException.class, CpfUniqueViolationException.class, CodigoUniqueViolationException.class})
     public ResponseEntity<ErrorMessage> uniqueViolationException(RuntimeException ex, HttpServletRequest request) {
         log.error("Api Error - ", ex);
         return ResponseEntity
