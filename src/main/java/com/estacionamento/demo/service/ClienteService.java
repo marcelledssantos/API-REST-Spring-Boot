@@ -3,7 +3,7 @@ package com.estacionamento.demo.service;
 import com.estacionamento.demo.entity.Cliente;
 import com.estacionamento.demo.exception.CpfUniqueViolationException;
 import com.estacionamento.demo.exception.EntityNotFoundException;
-import com.estacionamento.demo.projection.ClienteProjection;
+import com.estacionamento.demo.repository.projection.ClienteProjection;
 import com.estacionamento.demo.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -11,8 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -46,5 +44,12 @@ public class ClienteService {
     @Transactional(readOnly = true)
     public Cliente buscarPorUsuarioId(Long id) {
         return clienteRepository.findByUsuarioId(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Cliente buscarPorCpf(String cpf) {
+        return clienteRepository.findByCpf(cpf).orElseThrow(
+                () -> new EntityNotFoundException(String.format("Cliente com CPF '%s' não encontrado", cpf))
+        );
     }
 }

@@ -1,4 +1,4 @@
-package com.estacionamento.demo.projection;
+package com.estacionamento.demo.repository.projection;
 
 public interface ClienteProjection {
     Long getId();

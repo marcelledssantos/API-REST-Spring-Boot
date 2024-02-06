@@ -2,7 +2,7 @@ package com.estacionamento.demo.web.controller;
 
 import com.estacionamento.demo.entity.Cliente;
 import com.estacionamento.demo.jwt.JwtUserDetails;
-import com.estacionamento.demo.projection.ClienteProjection;
+import com.estacionamento.demo.repository.projection.ClienteProjection;
 import com.estacionamento.demo.service.ClienteService;
 import com.estacionamento.demo.service.UsuarioService;
 import com.estacionamento.demo.web.dto.ClienteCreateDto;
