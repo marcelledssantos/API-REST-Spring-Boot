@@ -32,7 +32,6 @@ public class EstacionamentoUtils {
                 total += PRIMEIROS_60_MINUTES + (ADICIONAL_15_MINUTES * totalParts.intValue());
             }
         }
-
         return new BigDecimal(total).setScale(2, RoundingMode.HALF_EVEN);
     }
 
