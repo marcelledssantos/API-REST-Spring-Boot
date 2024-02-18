@@ -34,7 +34,7 @@ Foram realizados testes unitártios e testes de integração para garantir o fun
 Os testes de integração rodam em uma instância de banco H2.
 
 ## Licença
-Este projeto é licenciado sob a Licença MIT.
+Projeto licenciado sob a Licença MIT.
 
 
 
